@@ -15,3 +15,10 @@ CREATE TABLE users(
 	foreign key (level_no) references questions(level_no)
 );
 
+insert into questions(1,'answer1',10);
+insert into questions(2,'answer2',10);
+insert into questions(3,'answer3',10);
+insert into questions(4,'answer4',10);
+insert into questions(5,'answer5',10);
+
+
