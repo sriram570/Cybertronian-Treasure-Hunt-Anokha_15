@@ -48,6 +48,7 @@ if (isset($_SESSION['username']))
 	echo "\nScore : ".$_SESSION['score'];
 
 	echo "<a href='logout.php'>Logout</a>";
+	echo "<a href='leaderboard.php'>Leaderboard</a>";
 	echo "<form action='' method='POST'>";
 	//echo "<img src='question/q1.jpg' alt='image1' style='width:304px;height:228px>";
 	echo "<br></br>";
