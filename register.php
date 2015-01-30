@@ -13,19 +13,27 @@ if (isset($_POST['username']) && isset($_POST['password']))
 		$email = $_POST['email'];
 		$password = keymaker($_POST['password']);
 	       
-		$checkusername = mysql_query("SELECT * FROM `user`  WHERE username= '$username'");
+		$checkusername = mysql_query("SELECT * FROM `users`  WHERE username= '$username'");
 		 if(mysql_num_rows($checkusername))
 		    {
 		        $msg = "Username already exists.!";
 		    }
 		else
+			
 			{  
-			        $query = "INSERT INTO `user` (username,mailid,password,score) VALUES ('$username', '$email', '$password','0')";
+				$score = 0;
+				$level_no = 1;
+$query = "INSERT INTO `users` (username,mailid,pword,score,level_no) VALUES ('$username', '$email', '$password','$score','$level_no')";
 			        $result = mysql_query($query);
+				echo $result;
+				echo $query;
 			        if($result)
 				{
 		        	    $msg = "User Created Successfully.";
 			        }
+				else
+				{
+				$msg = "registraion failed";}
 			}
     	}
 

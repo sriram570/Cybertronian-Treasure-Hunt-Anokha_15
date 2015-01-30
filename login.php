@@ -16,7 +16,7 @@ if (isset($_POST['submit']))
 	#echo $pas."\n";
 	$password = keymaker($pas);	
 
-$sql = "SELECT * FROM `user` WHERE username='$username' and password='$password'";
+$sql = "SELECT * FROM `users` WHERE username='$username' and pword='$password'";
 $result = mysql_query($sql) or die(mysql_error());
 
 $count = mysql_num_rows($result);
@@ -24,6 +24,7 @@ if ($count == 1){
     $_SESSION['username'] = $username;
     $row = mysql_fetch_assoc($result);
     $_SESSION['score'] = $row['score'];
+    $_SESSION['level_no'] = $row['level_no'];
     header('Location:homepage.php');
 }else {
      $msg = "Login failed.! Try again..!";
