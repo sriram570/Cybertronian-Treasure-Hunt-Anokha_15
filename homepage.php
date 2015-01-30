@@ -41,52 +41,109 @@ if (isset($_SESSION['username']))
 	}
 	else 
 	{
-		echo "\nCummon..Start the Game!!!";
+		//echo "\nCummon..Start the Game!!!";
 	}
 }
 ?>
 <html>
-
+<link href="/normalize.css" rel="stylesheet">
 <title>Home page</title>
 <style>
 @font-face{
 	font-family: 'TreasureHunt';
 	src: url(batmfa__.ttf);
 	}
-        p{
-                float: right;
-        }
+	header{ 
+		margin:; 
+		text-align:right;
+		background: white;
+		color:black;
+		border-radius:3px;
+		height:20px;
+		line-height:20px; 
+	}
+	li{ 
+		display: inline;
+		padding: 0 10px 0 10px;
+	}
+            
 	h1{ 
+		color:white;
 		margin:20px 0 0 0;
 		text-align: center;
 		font-family: 'TreasureHunt';
 	}
+	.question{
+		position: relative;
+	}
+			
+	.sideMenu{
+		margin:10px 0 10px 20px;
+		font-family: sans-serif;
+                text-align: center;
+                font-size: 15px;
+                color: #aaa;
+                vertical-align: middle;
+                height: 70px;
+                width:150px;
+                line-height:40px;
+                /*border-radius: 100%;*/
+                /*border:1px dotted rgba(0,0,0,0));*/
+                border-style: solid;
+                border-radius: 50px;
+                border-color:rgba(255,255,255,0.5);
+                -moz-transition:0.5s ease;	
+	}
+	.sideMenu:hover{
+		background: white;
+		color: black;
+		font-size:20px;
+		line-height: 25px;
+	}
 	body{ 
-		
-		background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+		background:url('cosmos.jpg');
+		background-size: cover;		
+		/*background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
   		background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
  		background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
 		background-size:black;
-		background-repeat: no-repeat;		
+		background-repeat: no-repeat;*/		
 	}	
-	.question{
-		float: center;
-	}		
+			
 		
 </style>
 <body>
-
-<p>Hi <?php echo $_SESSION['username'];?></p>
+<header>
+<ul> 
+<li>Hi, <?php echo $_SESSION['username'];?></li>
+<li>Score : <?php echo $_SESSION['score']; ?></li>
+</ul>
+</header>
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
-<p>Score : <?php echo $_SESSION['score']; ?></p>
-<a href='logout.php'>Logout</a>;
-<a href='leaderboard.php'>Leaderboard</a>;
-<form action='' method='POST'>
-<div class="question">
-<img src='q1.jpg' alt='image1' style='width:304px;height:228px'>;
+<a href="homepage.php">
+<div class="sideMenu"><p>Homepage</p>
 </div>
+</a>
+<a href="leaderboard.php">
+<div class="sideMenu"><p>Leaderboard</p>
+</div>
+</a>
+<a href="#">
+<div class="sideMenu"><p>Rules</p>
+</div>
+</a>
+<a href="logout.php">
+<div class="sideMenu">
+<p>Logout</p>
+</div>
+</a>
+<form action='' method='POST'>
+<div class="question" align="center">
+<img src='q1.jpg' alt='image1' style='width:400px;height:400px'>
 <br></br>
-<input id='answer' type='text' name='user_answer' placeholder=' Answer'/>;
-<input class='btn register' type='submit' name='Submit1' value='Submit' />;
+<input id='answer' type='text' name='user_answer' placeholder=' Answer'/>
+<br>
+<input class='btn register' type='submit' name='Submit1' value='Submit' />
+</div>
 </body>
 

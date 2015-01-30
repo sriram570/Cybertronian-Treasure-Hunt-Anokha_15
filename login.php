@@ -45,6 +45,68 @@ if ($count == 1){
 	font-family:'Hyperspace';
 	src:url(hyperspace.ttf);
 	}
+	/*
+	.button { 
+		width: 150px; 
+		padding: 10px; 
+		background-color: #FF8C00; 
+		box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2); 
+		font-weight:bold; 
+		text-decoration:none; 
+	} */
+	#cover{ 
+		position:fixed; 
+		top:0; left:0; 
+		background:rgba(0,0,0,0.6); 
+		z-index:5; 
+		width:100%; 
+		height:100%; 
+		display:none; 
+	} 
+	#loginScreen { 
+		height:250px; 
+		width:360px; 
+		margin:0 auto; 
+		position:relative;
+		padding:100px 0 0 0;
+		z-index:10;
+		display: none;
+		border:5px solid #cccccc; 
+		border-radius:10px;
+		font-family: 'Play', sans-serif;
+		text-align: center;
+                background: rgba(0,0,0,0.6);
+		color: #00FF00;
+	} 
+	#loginScreen:target, #loginScreen:target + #cover{ 
+		display:block; 
+		opacity:2; 
+	} 
+	.cancel { 
+		display:block; 
+		position:absolute; 
+		top:3px;
+		right:2px; 
+		background:rgb(245,245,245); 
+		color:black; 
+		height:30px; 
+		width:35px; 
+		font-size:30px; 
+		text-decoration:none; 
+		text-align:center; 
+		font-weight:bold; 
+	} 
+	#loginScreen .btn{
+		background: rgba(0,0,0,0.6);;
+		padding: 7px;
+		border-radius:5px;
+		font-family: 'Play',sans-serif;
+		font-weight: bold;
+		font-height:50px;
+		width: 70px;
+		display: inline-block;
+		color: #aaa;
+	}
 
 	h1{
 		padding:20px 10px 0 10px;
@@ -68,21 +130,40 @@ if ($count == 1){
 		width: 350px;
 	}
 	.signup{
-		margin:50px 150px 0 0px;
+		margin:100px 150px 0 0px;
 		font-family: 'Hyperspace';
 		float: right;
 		text-align: center;
 		font-size: 30px;
 		color: #aaa;
 		vertical-align: middle;
-		height: 200px;
+		height: 100px;
 		width:200px;
-		line-height:130px;
+		line-height:32px;
 		/*border-radius: 100%;*/
 		/*border:1px dotted rgba(0,0,0,0));*/
 		border-style: solid;
+		border-radius: 50px;
 		border-color:rgba(0,0,0,0.5);
 		-moz-transition:0.5s ease;
+	}
+	.login{
+		margin:100px 0 0 150px;
+                font-family: 'Hyperspace';
+                float: left;
+                text-align: center;
+                font-size: 30px;
+                color: #aaa;
+                vertical-align: middle;
+                height: 100px;
+                width:200px;
+                line-height:32px;
+                /*border-radius: 100%;*/
+                /*border:1px dotted rgba(0,0,0,0));*/
+                border-style: solid;
+		border-radius: 50px;
+                border-color:rgba(0,0,0,0.5);
+                -moz-transition:0.5s ease;
 	}
 	.text{
 		text-align:center;
@@ -90,12 +171,25 @@ if ($count == 1){
 		float:center;
 	}
 	.signup:hover{
+		margin:50px 150px 0 0;
+		height:200px;
 		border-color: rgba(0,0,0,0.5);
 		border-radius:50%;
 		border: 20px dotted rgba(0,0,0,0.7);
 		font-weight: bold;
+		line-height: 130px;
 		
 	}
+	.login:hover{
+		margin:50px 0 0 150px;
+		height: 200px;
+		border-color: rgba(0,0,0,0.5);
+                border-radius:50%;
+                border: 20px dotted rgba(0,0,0,0.7);
+                font-weight: bold;
+		line-height: 130px;
+        }
+
 	.reg{
 		padding:50px 0 0 0;
 	}
@@ -114,7 +208,7 @@ background-size: cover;
 </style>
 <body> 
 <h1>Cybertronian Hunt</h1>
-<div class="register-form">
+<!--<div class="register-form">
 <?php
    	if(isset($msg) & !empty($msg))
 	{
@@ -131,11 +225,37 @@ background-size: cover;
     <input class="btn register" type="submit" name="submit" value="Login" />
         
     </form>
-</div>
+</div>-->
 <a href="register.php">
 <div class="signup">
 	<p>Register</p>
 </div>
 </a>
+<a href="#loginScreen">
+<div class="login">
+	<p>Login</p>
+</div>
+</a>
+<div id="loginScreen">
+	<a href="#" class="cancel">&times;</a>
+	<?php
+        if(isset($msg) & !empty($msg))
+        {
+                echo $msg;
+        }
+?>
+
+<form action="" method="POST">
+    <p><label>User Name : </label>
+        <input id="username" type="text" name="username" placeholder="username" /></p>
+
+     <p><label>Password&nbsp;&nbsp; : </label>
+         <input id="password" type="password" name="password" placeholder="password" /></p>
+    <input class="btn register" type="submit" name="submit" value="Login" />
+
+    </form>
+</div>
+<div id="cover">
+</div>
 </body>
 </html>
