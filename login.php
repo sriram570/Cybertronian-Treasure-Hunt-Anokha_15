@@ -41,8 +41,13 @@ if ($count == 1){
  	font-family:'TreasureHunt';
 	src:url(batmfa__.ttf);
 	}
+@font-face{
+	font-family:'Hyperspace';
+	src:url(hyperspace.ttf);
+	}
+
 	h1{
-		padding:20 10 0 10px;
+		padding:20px 10px 0 10px;
 		border: 100px 0 0 100px;
 		font-family: 'TreasureHunt';
 		font-size: 70px;
@@ -63,18 +68,35 @@ if ($count == 1){
 		width: 350px;
 	}
 	.signup{
-		margin:100px 100px 0 10px;
-		font-family: 'Play', sans-serif;
+		margin:50px 150px 0 0px;
+		font-family: 'Hyperspace';
 		float: right;
 		text-align: center;
-		font-size: 40px;
+		font-size: 30px;
 		color: #aaa;
+		vertical-align: middle;
+		height: 200px;
 		width:200px;
-		height:200px;
-		border-radius: 50%;
+		border-radius: 100%;
+		/*border:1px dotted rgba(0,0,0,0));*/
 		border-style: solid;
-		border-color:#aaa;
+		border-color:rgba(0,0,0,0);
+		-moz-transition:0.5s ease;
 	}
+	.text{
+		text-align:center;
+		vertical-align: center;
+	}
+	.signup:hover{
+		border-color: rgba(0,0,0,0.5);
+		border: 20px dotted rgba(0,0,0,0.7);
+		font-weight: bold;
+		
+	}
+	.reg{
+		padding:50px 0 0 0;
+	}
+	
 body
 {
 background: #000;
@@ -104,12 +126,14 @@ background-size: cover;
      <p><label>Password&nbsp;&nbsp; : </label>
          <input id="password" type="password" name="password" placeholder="password" /></p>
     <input class="btn register" type="submit" name="submit" value="Login" />
-        <a class="btn" href="register.php">Signup</a>
+        
     </form>
 </div>
 <a href="register.php">
 <div class="signup">
-	<p>Register</p>
+	<span class="text">
+	<br>
+	<p>Register</p></span>
 </div>
 </a>
 </body>
