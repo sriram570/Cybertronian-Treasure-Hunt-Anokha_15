@@ -77,18 +77,21 @@ if ($count == 1){
 		vertical-align: middle;
 		height: 200px;
 		width:200px;
-		border-radius: 100%;
+		line-height:130px;
+		/*border-radius: 100%;*/
 		/*border:1px dotted rgba(0,0,0,0));*/
 		border-style: solid;
-		border-color:rgba(0,0,0,0);
+		border-color:rgba(0,0,0,0.5);
 		-moz-transition:0.5s ease;
 	}
 	.text{
 		text-align:center;
 		vertical-align: center;
+		float:center;
 	}
 	.signup:hover{
 		border-color: rgba(0,0,0,0.5);
+		border-radius:50%;
 		border: 20px dotted rgba(0,0,0,0.7);
 		font-weight: bold;
 		
@@ -131,9 +134,7 @@ background-size: cover;
 </div>
 <a href="register.php">
 <div class="signup">
-	<span class="text">
-	<br>
-	<p>Register</p></span>
+	<p>Register</p>
 </div>
 </a>
 </body>
