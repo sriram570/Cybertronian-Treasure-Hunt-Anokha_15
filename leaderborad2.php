@@ -19,13 +19,13 @@ $count = 1;
 
 ?>
 <form action="homepage.php">
-<input type="image" src="img\BackButton.gif" alt="Submit" width="48" height="48" padd>
+<input type="image" src="img/BackButton.gif" alt="Submit" width="48" height="48" padd>
 </form>
 <div class="container" align='center' >
     <div class="row"  align='center' style="margin-top:30px; ">
       <div class="well col-sm-12" align='center' style= "background:rgba(0,0,0,0.5);color:white;">
         <h3 style="margin-top:0px; margin-bottom:20px;">Leader Board</h3>
-        <table class="table table-condensed">
+        <table class="table">
           <thead>
             <tr>
               <th><h4>#</h4></th>
