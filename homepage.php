@@ -26,7 +26,8 @@ if (isset($_SESSION['username']))
                         $image = "question\q".$tlevel.".jpg" ;
 			$update_sql = "update users set score='$tscore',level_no='$tlevel'  where username='$tname'";
 			$returnval = mysql_query($update_sql);
-			$image ="success.jpg";
+                        header('Location: success.php');
+
 			
 		}
 		elseif ( $total < ($_SESSION['level_no'] + 1))
@@ -37,7 +38,7 @@ if (isset($_SESSION['username']))
 
 		else
 		{
-			//echo "\nTry Again";
+			header('Location: wrong.php');
 		}
 		
 	}
