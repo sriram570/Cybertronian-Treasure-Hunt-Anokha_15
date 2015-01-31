@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-placeholder-focus="false">
   <head>
-
+    <link href="/normalize.css" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="google" value="notranslate" />
     <meta http-equiv="Content-Language" content="en_US" />

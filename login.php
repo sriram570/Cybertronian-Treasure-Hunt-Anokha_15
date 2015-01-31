@@ -36,6 +36,7 @@ if ($count == 1){
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 <title>Cybertronian Hunt</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<meta name="veiwport" content="width=device-width">
 <style>
 @font-face{
  	font-family:'TreasureHunt';
@@ -45,6 +46,7 @@ if ($count == 1){
 	font-family:'Hyperspace';
 	src:url(hyperspace.ttf);
 	}
+	
 	/*
 	.button { 
 		width: 150px; 
@@ -108,10 +110,6 @@ if ($count == 1){
 		color: #aaa;
 	}
 
-	a{
-		text-decoration:none;
-	}
-
 	h1{
 		padding:20px 10px 0 10px;
 		border: 100px 0 0 100px;
@@ -134,6 +132,7 @@ if ($count == 1){
 		width: 350px;
 	}
 	.signup{
+		position:relative;
 		margin:100px 150px 0 0px;
 		font-family: 'Hyperspace';
 		float: right;
@@ -149,9 +148,15 @@ if ($count == 1){
 		border-style: solid;
 		border-radius: 50px;
 		border-color:rgba(0,0,0,0.5);
-		-moz-transition:0.5s ease;
+		-webkit-transition: 0.5s ease;
+	        -moz-transition: 0.5s ease;
+       	        -ms-transition: 0.5s ease;
+    	        -o-transition: 0.5s ease;
+       	        transition: 0.5s ease;
+
 	}
 	.login{
+		position:relative;
 		margin:100px 0 0 150px;
                 font-family: 'Hyperspace';
                 float: left;
@@ -167,7 +172,12 @@ if ($count == 1){
                 border-style: solid;
 		border-radius: 50px;
                 border-color:rgba(0,0,0,0.5);
-                -moz-transition:0.5s ease;
+                -webkit-transition: 0.5s ease;
+                -moz-transition: 0.5s ease;
+                -ms-transition: 0.5s ease;
+                -o-transition: 0.5s ease;
+                transition: 0.5s ease;
+
 	}
 	.text{
 		text-align:center;
@@ -197,17 +207,50 @@ if ($count == 1){
 	.reg{
 		padding:50px 0 0 0;
 	}
+	a{ 	
+		text-decoration:none;
+	}
 	
 body
 {
-background: #000;
-background-image: url('Hunt.jpg');
-background-size: cover;
-<!--background-repeat: no-repeat;-->
+background: url('Hunt.jpg') no-repeat fixed;
+-moz-background-size: cover;
+background-size:cover;
+background-position: none center; 
 <!--background-size: 95%;-->
 <!--background-attachment:fixed;-->
 
 }
+/*@media(max-width:1000px){
+	h1{ 
+		font-size:40px;
+		
+	}
+	p{
+		
+		font-size:20px;
+	}
+	.signup{
+		margin:75px 100px 0 0;
+		height:40px;
+		width:70px;
+	}
+	.login{
+		margin:75px 0 0 100px;
+		width:70px;
+		height:40px;
+	}
+	.signup:hover{
+		height:70px;
+	
+	}
+	.login:hover{
+		height:70px;}
+	body{
+		background-size:cover;
+	}
+}
+*/
 </head>
 </style>
 <body> 
