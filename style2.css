@@ -10,7 +10,7 @@ body{
     		background-position: center center; 	
 }
 table{width:80%;
-background:rgba(0.5,0,0,0);
+background:rgba(0,0,0,0.5);
 }
 
 h3{text-align:center;
@@ -27,4 +27,5 @@ padding:8px;
 line-height:1.42857143;
 vertical-align:top;
 border:1px solid #ddd;
+
 }

@@ -34,6 +34,7 @@ if ($count == 1){
 <head>
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 <title>Cybertronian Hunt</title>
+<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 <meta name="veiwport" content="width=device-width">
 <style>

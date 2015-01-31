@@ -50,6 +50,7 @@ if (isset($_SESSION['username']))
 <html>
 <head>
 <title>Home Page</title>
+<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link href="homepagestyle.css" rel="stylesheet">
 <style>
 </style>
