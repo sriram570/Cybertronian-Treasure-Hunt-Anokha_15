@@ -4,23 +4,18 @@ session_start();
 require_once 'connect.php';
 if (isset($_SESSION['username']))
 {
-
 	$level = $_SESSION['level_no'];
 	$image = "question/q".$level.".jpg" ;
-
 	if ( isset( $_POST['Submit1'] ) ) 
 	{
 		$ans = $_POST['user_answer'];
-		#echo $_POST['user_answer'];
 		$sql = "SELECT * FROM `questions` WHERE level_no='$level' ";
 		$result = mysql_query($sql) or die(mysql_error());
 		$row = mysql_fetch_assoc($result);
-		#echo $row['answer'];
-		                $level_limit = mysql_query("select count(1) FROM `questions` ");
+		$level_limit = mysql_query("select count(1) FROM `questions` ");
                 $limit = mysql_fetch_array($level_limit);
                 $total = $limit[0];
                 if ($row['answer'] == $ans && ($_SESSION['level_no'] + 1) <= $total)
-
 		{
 			
 			$_SESSION['level_no'] = $_SESSION['level_no'] + 1;
@@ -31,14 +26,8 @@ if (isset($_SESSION['username']))
                         $image = "question\q".$tlevel.".jpg" ;
 			$update_sql = "update users set score='$tscore',level_no='$tlevel'  where username='$tname'";
 			$returnval = mysql_query($update_sql);
-			if($returnval)
-			{
-				//echo "congrats. go to next lvev";
-			}
-			else
-			{
-				//echo "connectoin problems";
-			}
+			$image ="success.jpg";
+			
 		}
 		elseif ( $total < ($_SESSION['level_no'] + 1))
                 {
@@ -54,7 +43,6 @@ if (isset($_SESSION['username']))
 	}
 	else 
 	{
-		//echo "\nCummon..Start the Game!!!";
 	}
 }
 ?>
@@ -75,11 +63,6 @@ if (isset($_SESSION['username']))
 		height:20px;
 		line-height:20px; 
 	}
-	/*li{ 
-		display: inline;
-		padding: 0 10px 0 10px;
-	}*/
-            
 	h1{ 
 		color:white;
 		margin:20px 0 0 0;
@@ -102,8 +85,6 @@ if (isset($_SESSION['username']))
                 height: 45px;
                 width:150px;
 		line-height:25px;
-		/*border-radius: 100%;*/
-                /*border:1px dotted rgba(0,0,0,0));*/
                 border-style: solid;
                 border-radius: 50px;
                 border-color:rgba(255,255,255,0.5);
@@ -149,19 +130,12 @@ if (isset($_SESSION['username']))
 	body{ 
 		background:url('cosmos.jpg');
 		background-size: cover;		
-		/*background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-  		background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
- 		background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
-		background-size:black;
-		background-repeat: no-repeat;*/		
 	}
 	input[type="text"]{
-
 	 	 border: solid 1px #707070;
  		 box-shadow: 0 0 5px 1px #969696;
  		 line-height: 2em;
         }
-
 	.btn{
 		height:40px;
 		background:#2f4f4f;
@@ -169,45 +143,17 @@ if (isset($_SESSION['username']))
 		color:white;
 		border-style:solid;
 		border-radius: 5px;
-	}
-	
-		
-	
-			
-		
+	}	
 </style>
 <body>
-<!--<header>
-<ul> 
-<li>Hi, <?php echo $_SESSION['username'];?></li>
-<li>Score : <?php echo $_SESSION['score']; ?></li>
-</ul>
-</header>-->
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
-<!--<a href="homepage.php">
-<div class="sideMenu"><p>Homepage</p></div>
-</a>
-<a href="leaderboard.php">
-<div class="sideMenu"><p>Leaderboard</p></div>
-</a>
-<a href="#">
-<div class="sideMenu"><p>Rules</p>
-</div>
-</a>
-<a href="logout.php">
-<div class="sideMenu">
-<p>Logout</p>
-</div>
-</a>-->
 <div class="sample">
  <ul id = "navbar">
                 <li><a href = "homepage.php"><div class='sideMenu'>Homepage</div></a></li>
                 <li><a href = "leaderborad2.php"><div class='sideMenu'>Leaderboard</div></a></li>
                 <li><a href = "#"><div class='sideMenu'>Rules</div></a></li>
                 <li><a href = "logout.php"><div class='sideMenu'>Logout</div></a></li>
-              
         </ul></div>
-
 <form action='' method='POST'>
 <div class="question" align="center">
 <img src="<?php echo $image; ?>" style='width:400px;height:400px'>

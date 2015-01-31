@@ -1,5 +1,5 @@
 <?php
-	$connection = mysql_connect('localhost', 'root', 'c407@ab123');
+	$connection = mysql_connect('localhost', 'root', 'Ravindar26');
 	if (!$connection)
 	{
 	    die("Database Connection Failed" . mysql_error());
