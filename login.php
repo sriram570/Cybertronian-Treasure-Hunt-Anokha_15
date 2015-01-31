@@ -101,8 +101,7 @@ if ($count == 1){
 	}
 
 	h1{
-		padding:20px 10px 0 10px;
-		border: 100px 0 0 100px;
+		
 		font-family: 'TreasureHunt';
 		font-size: 70px;
 		text-align: center;
