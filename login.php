@@ -10,10 +10,8 @@ if (isset($_POST['submit']))
                 $key=md5($id.$secretkey);
                 return $key;
         }
-
-    $username = $_POST['username'];
+        $username = $_POST['username'];
 	$pas = $_POST['password'];
-	#echo $pas."\n";
 	$password = keymaker($pas);	
 
 $sql = "SELECT * FROM `users` WHERE username='$username' and pword='$password'";
@@ -29,6 +27,7 @@ if ($count == 1){
 }else {
      $msg = "Login failed.! Try again..!";
 }
+
 }
 ?>
 <html>
@@ -47,16 +46,6 @@ if ($count == 1){
 	font-family:'Hyperspace';
 	src:url(hyperspace.ttf);
 	}
-	
-	/*
-	.button { 
-		width: 150px; 
-		padding: 10px; 
-		background-color: #FF8C00; 
-		box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2); 
-		font-weight:bold; 
-		text-decoration:none; 
-	} */
 	#cover{ 
 		position:fixed; 
 		top:0; left:0; 
@@ -144,8 +133,6 @@ if ($count == 1){
 		height: 100px;
 		width:200px;
 		line-height:32px;
-		/*border-radius: 100%;*/
-		/*border:1px dotted rgba(0,0,0,0));*/
 		border-style: solid;
 		border-radius: 50px;
 		border-color:rgba(0,0,0,0.5);
@@ -168,8 +155,6 @@ if ($count == 1){
                 height: 100px;
                 width:200px;
                 line-height:32px;
-                /*border-radius: 100%;*/
-                /*border:1px dotted rgba(0,0,0,0));*/
                 border-style: solid;
 		border-radius: 50px;
                 border-color:rgba(0,0,0,0.5);
@@ -221,59 +206,17 @@ background-position: none center;
 <!--background-size: 95%;-->
 <!--background-attachment:fixed;-->
 
-}
-/*@media(max-width:1000px){
-	h1{ 
-		font-size:40px;
-		
-	}
-	p{
-		
-		font-size:20px;
-	}
-	.signup{
-		margin:75px 100px 0 0;
-		height:40px;
-		width:70px;
-	}
-	.login{
-		margin:75px 0 0 100px;
-		width:70px;
-		height:40px;
-	}
-	.signup:hover{
-		height:70px;
-	
-	}
-	.login:hover{
-		height:70px;}
-	body{
-		background-size:cover;
-	}
-}
-*/
+}	
 </head>
 </style>
 <body> 
 <h1>Cybertronian Hunt</h1>
-<!--<div class="register-form">
 <?php
    	if(isset($msg) & !empty($msg))
 	{
 		echo $msg;
 	}
 ?>
-<h2>Login</h2>
-<form action="" method="POST">
-    <p><label>User Name : </label>
-        <input id="username" type="text" name="username" placeholder="username" /></p>
-
-     <p><label>Password&nbsp;&nbsp; : </label>
-         <input id="password" type="password" name="password" placeholder="password" /></p>
-    <input class="btn register" type="submit" name="submit" value="Login" />
-        
-    </form>
-</div>-->
 <a href="register.php">
 <div class="signup">
 	<p>Register</p>

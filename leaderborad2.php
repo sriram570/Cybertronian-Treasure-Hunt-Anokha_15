@@ -7,13 +7,9 @@
     <meta http-equiv="Content-Language" content="en_US" />
     <title>Leader Board</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="style2.css" />
-    
-    
+    <link type="text/css" rel="stylesheet" href="style2.css" />    
   </head>
-
   <body>
-
 <?php
 session_start();
 require_once "connect.php";
