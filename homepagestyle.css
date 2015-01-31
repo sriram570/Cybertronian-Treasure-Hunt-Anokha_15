@@ -2,21 +2,24 @@
 	font-family: 'TreasureHunt';
 	src: url(batmfa__.ttf);
 	}
+@font-face{
+	font-family: 'gun';
+	src:url(gun.ttf);
+	}
 	header{ 
-		 
-		text-align:right;
-		background: white;
-		color:black;
-		border-radius:3px;
-		height:20px;
-		line-height:20px; 
+		font-family:'gun'; 
+		color:white;
+	}
+	.greetings{
+		float:right;
 	}
 	h1{ 
 		color:white;
-		margin:20px 0 0 0;
+		margin:20px 0 0 20px;
 		text-align: center;
 		font-family: 'TreasureHunt';
-	}
+	}	
+		
 	.question{
 		top:40px;
 		position: relative;
@@ -54,7 +57,7 @@
 	#navbar{
         position:relative;
         right:0px;
-	top:40px;
+	top:50px;
         z-index:150;
         width:150px;
 	}

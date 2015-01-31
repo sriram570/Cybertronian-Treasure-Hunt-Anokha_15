@@ -48,7 +48,6 @@ if (isset($_SESSION['username']))
 }
 ?>
 <html>
-
 <head>
 <title>Home Page</title>
 <link href="homepagestyle.css" rel="stylesheet">
@@ -56,6 +55,9 @@ if (isset($_SESSION['username']))
 </style>
 </head>
 <body>
+<header>
+<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span></h4>
+</header>
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
 <div class="sample">
  <ul id = "navbar">
