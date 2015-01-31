@@ -34,6 +34,7 @@ if ($count == 1){
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="normalize.css">
 <title>Cybertronian Hunt</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <meta name="veiwport" content="width=device-width">

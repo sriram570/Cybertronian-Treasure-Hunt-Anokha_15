@@ -59,7 +59,7 @@ if (isset($_SESSION['username']))
 }
 ?>
 <html>
-<link href="/normalize.css" rel="stylesheet">
+<link href="normalize.css" rel="stylesheet">
 <title>Home page</title>
 <style>
 @font-face{
