@@ -108,10 +108,6 @@ if ($count == 1){
 		color: #aaa;
 	}
 
-	a{
-		text-decoration:none;
-	}
-
 	h1{
 		padding:20px 10px 0 10px;
 		border: 100px 0 0 100px;

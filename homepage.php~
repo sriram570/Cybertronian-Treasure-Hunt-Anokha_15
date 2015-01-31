@@ -124,13 +124,6 @@ if (isset($_SESSION['username']))
 	    	background-size:   cover;                      
  	    	background-position: center center; 	
 	}	
-
-	input[type="text"]{
-	 
-  border: solid 1px #707070;
-  box-shadow: 0 0 5px 1px #969696;
-  line-height: 2em;
-		}
 			
 		
 </style>
@@ -146,7 +139,7 @@ if (isset($_SESSION['username']))
 <div class="sideMenu"><p>Homepage</p>
 </div>
 </a>
-<a href="leaderborad2.php">
+<a href="leaderboard.php">
 <div class="sideMenu"><p>Leaderboard</p>
 </div>
 </a>
