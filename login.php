@@ -41,7 +41,7 @@ if ($count == 1){
 </style>
 </head>
 <body> 
-<h1>Cybertronian Hunt</h1>
+<h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
 <?php
    	if(isset($msg) & !empty($msg))
 	{
