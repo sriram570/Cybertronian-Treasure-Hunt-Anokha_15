@@ -4,13 +4,13 @@
 .text {
 text-align:center;
 font-size: 20px;
+color: #D3D3D3;
+top:30px;
+position: relative;
 }
 
 body{ 
-	background-color: #C5BCBC;
-	background-image:  url();
-	background: linear-gradient(bottom, rgba(0.25,0,0,1), rgba(0,0,0,.4));
-	background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+	background-image:  url('cosmos.jpg');
 	background-size:black;
 	background-repeat: no-repeat;	
     	background-size:   cover;                   
@@ -18,7 +18,14 @@ body{
 }
 
 a{
+font-style: oblique;
 text-decoration: none;
+color:#66CCCC;
+}
+
+p img{
+top: 50px;
+position: relative;
 }
 
 </style>
