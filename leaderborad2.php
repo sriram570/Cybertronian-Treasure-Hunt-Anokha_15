@@ -25,12 +25,12 @@ $count = 1;
 <div class="container" align='center' >
     <div class="row"  align='center' style="margin-top:30px; ">
       <div class="well col-sm-12" align='center' style= "background:rgba(0,0,0,0);color:white;">
-        <h3 style="margin-top:0px; margin-bottom:20px;">Leader Board</h3>
+        <h3 style="margin-top:0px; margin-bottom:20px;">Leaderboard</h3>
         <table class="table">
           <thead>
             <tr>
               <th><h4>#</h4></th>
-              <th><h4>User Name</h4></th>
+              <th><h4>Username</h4></th>
               <th><h4>Level</h4></th>
               <th><h4>Score</h4></th>
             </tr>

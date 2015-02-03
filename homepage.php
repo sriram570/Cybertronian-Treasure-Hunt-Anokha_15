@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once 'connect.php';
@@ -76,4 +75,3 @@ if (isset($_SESSION['username']))
 <input class='btn register' type='submit' name='Submit1' value='Submit' />
 </div>
 </body>
-
