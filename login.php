@@ -79,5 +79,8 @@ if ($count == 1){
 </div>
 <div id="cover">
 </div>
+<div style="width:100%;bottom:0px;position:fixed;" align="center">
+<img src="amrita.png">
+</div>
 </body>
 </html>
