@@ -2,21 +2,24 @@
 	font-family: 'TreasureHunt';
 	src: url(batmfa__.ttf);
 	}
+@font-face{
+	font-family: 'gun';
+	src:url(gun.ttf);
+	}
 	header{ 
-		 
-		text-align:right;
-		background: white;
-		color:black;
-		border-radius:3px;
-		height:20px;
-		line-height:20px; 
+		font-family:'gun'; 
+		color:white;
+	}
+	.greetings{
+		float:right;
 	}
 	h1{ 
 		color:white;
-		margin:20px 0 0 0;
+		margin:20px 0 0 20px;
 		text-align: center;
 		font-family: 'TreasureHunt';
-	}
+	}	
+		
 	.question{
 		top:40px;
 		position: relative;
@@ -36,11 +39,11 @@
                 border-style: solid;
                 border-radius: 50px;
                 border-color:rgba(255,255,255,0.5);
-                -webkit-transition: 0.5s ease;
-	        -moz-transition: 0.5s ease;
-       	        -ms-transition: 0.5s ease;
-       	        -o-transition: 0.5s ease;
- 	        transition: 0.5s ease;
+                -webkit-transition: all 0.5s ease;
+	        -moz-transition: all 0.5s ease;
+       	        -ms-transition: all 0.5s ease;
+       	        -o-transition: all 0.5s ease;
+ 	        transition: all 0.5s ease;
 		overflow: hidden;	
 	}	
 	.sideMenu:hover{
@@ -54,13 +57,13 @@
 	#navbar{
         position:relative;
         right:0px;
-	top:40px;
+	top:50px;
         z-index:150;
         width:150px;
 	}
 	.sample{
 		position: absolute;
-		float:left;
+		float:right;
 
 	}
 	ul{

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require_once 'connect.php';
@@ -48,14 +47,17 @@ if (isset($_SESSION['username']))
 }
 ?>
 <html>
-
 <head>
 <title>Home Page</title>
+<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link href="homepagestyle.css" rel="stylesheet">
 <style>
 </style>
 </head>
 <body>
+<header>
+<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span></h4>
+</header>
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
 <div class="sample">
  <ul id = "navbar">
@@ -73,4 +75,3 @@ if (isset($_SESSION['username']))
 <input class='btn register' type='submit' name='Submit1' value='Submit' />
 </div>
 </body>
-

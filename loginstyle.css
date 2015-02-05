@@ -6,6 +6,34 @@
 	font-family:'Hyperspace';
 	src:url(hyperspace.ttf);
 	}
+	.head-logo{
+		height:70px;
+		padding:5px 5px 0 5px;
+		vertical-align: middle;
+		 -moz-animation: spin 3s infinite linear;
+   		 -webkit-animation: spin 3s infinite linear;		
+	}
+	@-moz-keyframes spin {
+ 	   	0% {
+        		-moz-transform: rotate(0deg);
+    		}
+
+    		100% {
+        		-moz-transform: rotate(360deg);
+    		};
+	}
+	
+	@-webkit-keyframes spin {
+    		0% {
+        		-webkit-transform: rotate(0deg);
+    		}
+
+    		100% {
+        		-webkit-transform: rotate(360deg);
+    		};
+	}
+	
+
 	#cover{ 
 		position:fixed; 
 		top:0; left:0; 
@@ -93,11 +121,11 @@
 		border-style: solid;
 		border-radius: 50px;
 		border-color:rgba(0,0,0,0.5);
-		-webkit-transition: 0.5s ease;
-	        -moz-transition: 0.5s ease;
-       	        -ms-transition: 0.5s ease;
-    	        -o-transition: 0.5s ease;
-       	        transition: 0.5s ease;
+		-webkit-transition: all 0.5s ease;
+	        -moz-transition: all 0.5s ease;
+       	        -ms-transition: all 0.5s ease;
+    	        -o-transition:all 0.5s ease;
+       	        transition: all 0.5s ease;
 
 	}
 	.login{
@@ -115,11 +143,11 @@
                 border-style: solid;
 		border-radius: 50px;
                 border-color:rgba(0,0,0,0.5);
-                -webkit-transition: 0.5s ease;
-                -moz-transition: 0.5s ease;
-                -ms-transition: 0.5s ease;
-                -o-transition: 0.5s ease;
-                transition: 0.5s ease;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
 
 	}
 	.text{

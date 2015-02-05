@@ -34,13 +34,14 @@ if ($count == 1){
 <head>
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 <title>Cybertronian Hunt</title>
+<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
 <meta name="veiwport" content="width=device-width">
 <style>
 </style>
 </head>
 <body> 
-<h1>Cybertronian Hunt</h1>
+<h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
 <?php
    	if(isset($msg) & !empty($msg))
 	{
@@ -77,6 +78,9 @@ if ($count == 1){
     </form>
 </div>
 <div id="cover">
+</div>
+<div style="width:100%;bottom:0px;position:fixed;" align="center">
+<img src="amrita.png">
 </div>
 </body>
 </html>
