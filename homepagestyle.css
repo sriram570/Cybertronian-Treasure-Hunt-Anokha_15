@@ -6,14 +6,20 @@
 	font-family: 'gun';
 	src:url(gun.ttf);
 	}
+@font-face{
+	font-family:'prototype';
+	src:url(Prototype.ttf);
+	}
 	header{ 
-		font-family:'gun'; 
+		margin:0px 30px 0 30px;
+		font-family:'prototype';
+		font-size:20px; 
 		color:white;
 	}
 	.greetings{
 		float:right;
 	}
-	h1{ 
+	h1{
 		color:white;
 		margin:20px 0 0 20px;
 		text-align: center;
@@ -26,16 +32,17 @@
 	}
 			
 	.sideMenu{
+		top:0px;
 		position:relative;
 		padding: 20px 0 0 0;
-		margin:10px 0 10px 10px;
+		margin:0 0 10px 0px;
 		font-family: sans-serif;
                 text-align: center;
-                font-size: 15px;
+                font-size: 20px;
                 color: #aaa;
-                height: 45px;
+                height: 35px;
                 width:150px;
-		line-height:25px;
+		line-height:15px;
                 border-style: solid;
                 border-radius: 50px;
                 border-color:rgba(255,255,255,0.5);
@@ -49,7 +56,7 @@
 	.sideMenu:hover{
 		background: white;
 		color: black;
-		font-size:20px;
+		font-size:25px;
 		line-height:22px;
 		
 	}
@@ -57,7 +64,7 @@
 	#navbar{
         position:relative;
         right:0px;
-	top:50px;
+	top:10px;
         z-index:150;
         width:150px;
 	}
@@ -88,10 +95,22 @@
  		 line-height: 2em;
         }
 	.btn{
+		cursor: pointer;
 		height:40px;
 		background:#2f4f4f;
 		opacity:0.5;
 		color:white;
 		border-style:solid;
 		border-radius: 5px;
-	}	
+	}
+	.links{
+		
+		color:#aaa;
+		
+	}
+	.links:hover{
+		color:white;
+	}
+		
+	
+	

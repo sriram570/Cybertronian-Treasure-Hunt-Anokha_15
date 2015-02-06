@@ -23,7 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 			{  
 				$score = 0;
 				$level_no = 1;
-$query = "INSERT INTO `users` (username,mailid,pword,score,level_no) VALUES ('$username', '$email', '$password','$score','$level_no')";
+$query = "INSERT INTO `users` (username,mailid,pword,score,level_no,date_time) VALUES ('$username', '$email', '$password','$score','$level_no', now())";
 			        $result = mysql_query($query);
 				echo $result;
 				echo $query;

@@ -33,6 +33,10 @@ if ($count == 1){
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+<!--<link rel="stylesheet" type="text/css" href="normalize1.css" />-->
+	<!--<link rel="stylesheet" type="text/css" href="demo.css" />-->
+	<!--<link rel="stylesheet" type="text/css" href="style1.css" />-->
+  	<script src="modernizr.custom.js"></script>
 <title>Cybertronian Hunt</title>
 <link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="loginstyle.css">
@@ -79,8 +83,32 @@ if ($count == 1){
 </div>
 <div id="cover">
 </div>
-<div style="width:100%;bottom:0px;position:fixed;" align="center">
-<img src="amrita.png">
+<div style="width:100%;bottom:0px;position:fixed;" align="right">
+<img src="amrita.png" style="height: 50px; padding:0 10px 0 0;">
+</div>
+<div style="bottom:20px; position:fixed; width:100%;" align="left">
+<button id="trigger-overlay" type="button" class="buttn">RULES</button>
+</div>
+<div class="overlay overlay-hugeinc">
+                        <button type="button" class="overlay-close">Close</button>
+                        <!--<nav>
+                                <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Work</a></li>
+                                        <li><a href="#">Clients</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                </ul>
+                        </nav>-->
+                        <h1>Rules</h1>
+		<div class="overlay-text" align="center">	
+		<p>This is an individual event.</p>
+   <p>Anyone can participate irrespective of their geographical location.</p>
+   <p>Helping others with answers is a violation of the intergalactic law. Suggesting obscure clues and gently nudging them to the answer however is not.</p>
+               
+		</div>
+                <script src="classie.js"></script>
+                <script src="demo1.js"></script>
 </div>
 </body>
 </html>

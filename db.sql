@@ -13,6 +13,7 @@ CREATE TABLE users(
 	pword varchar(255), 
 	score int,
 	level_no int,
+	date_time datetime,
 	foreign key (level_no) references questions(level_no)
 );
 
@@ -21,5 +22,5 @@ insert into questions values(2,'answer2',10);
 insert into questions values(3,'answer3',10);
 insert into questions values(4,'answer4',10);
 insert into questions values(5,'answer5',10);
-
+insert into questions values(6,'answer6',10);
 
