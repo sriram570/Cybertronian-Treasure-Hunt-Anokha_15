@@ -23,7 +23,7 @@ if (isset($_SESSION['username']))
 			$tlevel = $_SESSION['level_no'];
 			$tname = $_SESSION['username'];
                         $image = "question\q".$tlevel.".jpg" ;
-			$update_sql = "update users set score='$tscore',level_no='$tlevel'  where username='$tname'";
+			$update_sql = "update users set score='$tscore',level_no='$tlevel', date_time = now()  where username='$tname'";
 			$returnval = mysql_query($update_sql);
                         header('Location: success.php');
 
@@ -48,7 +48,7 @@ if (isset($_SESSION['username']))
 ?>
 <html>
 <head>
-<title>Home Page</title>
+<title>Homepage</title>
 <link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link href="homepagestyle.css" rel="stylesheet">
 <style>
@@ -56,22 +56,29 @@ if (isset($_SESSION['username']))
 </head>
 <body>
 <header>
-<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span></h4>
+<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span><br><br><a href="leaderborad2.php" class="links">LEADERBOARD</a><span style="float:right"><a href="logout.php" class="links">LOGOUT</a></span></h4>
+<!--<div class="sample">
+ <ul id = "navbar">
+                <li><a href = "leaderborad2.php"><div class='sideMenu'>Leaderboard</div></a></li>
+
+        </ul></div>-->
+<!--<div class="lo">
+<a href="logout.php">
+<img src="logout.png" style="height:50px">
+</a></div>-->
 </header>
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
-<div class="sample">
- <ul id = "navbar">
-                <li><a href = "homepage.php"><div class='sideMenu'>Homepage</div></a></li>
-                <li><a href = "leaderborad2.php"><div class='sideMenu'>Leaderboard</div></a></li>
-                <li><a href = "#"><div class='sideMenu'>Rules</div></a></li>
-                <li><a href = "logout.php"><div class='sideMenu'>Logout</div></a></li>
-        </ul></div>
 <form action='' method='POST'>
-<div class="question" align="center">
+<div class="question" align="center" style:"position:relative">
 <img src="<?php echo $image; ?>" style='width:400px;height:400px'>
 <br><br><br>
 <input id='answer' type='text' name='user_answer' placeholder=' Answer' align='center'/>
 <br><br>
 <input class='btn register' type='submit' name='Submit1' value='Submit' />
-</div>
+</div> 
+<!--<div class="lo">
+<a href="logout.php">
+<img src="logout.png" style="height:50px">
+</a>
+</div>-->
 </body>

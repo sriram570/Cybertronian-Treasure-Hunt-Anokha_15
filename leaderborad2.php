@@ -14,7 +14,7 @@
 <?php
 session_start();
 require_once "connect.php";
-$sql ="select * from users order by score desc";
+$sql ="select * from users order by score desc, date_time asc";
 $result = mysql_query($sql);
 $count = 1;
 
