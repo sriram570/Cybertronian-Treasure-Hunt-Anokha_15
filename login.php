@@ -2,32 +2,66 @@
 <?php
 session_start();
 require_once 'connect.php';
-if (isset($_POST['submit']))
+if ($_POST['login-email-mobile'] && $_POST['login-password'])
   {
-         function keymaker($id)
-        {
-                $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
-                $key=md5($id.$secretkey);
-                return $key;
-        }
-        $username = $_POST['username'];
-	$pas = $_POST['password'];
-	$password = keymaker($pas);	
+        $login = urlencode($_POST['login-email-mobile']);
+	$password = urlencode($_POST['login-password']);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_URL,"https://anokha.amrita.edu/api/registrations/login/");
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS,"login-email-mobile=$login&login-password=$password&accessLevel=form");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$result = curl_exec ($ch);
+	if($result)
+	{
+		$result = json_decode($result,true);
+		$status =  $result[status];
+		switch($status)
+		{
+		case "ok" : echo "login succesfsul";
+			    $username =  $result[name];
+      			    $anokhaid =  $result[anokha_id];
+      			    $sql = "SELECT * FROM `users` where username='$username'";
+      			    $result1 = mysql_query($sql) or die(mysql_error());
+               	            $count = mysql_num_rows($result1);
+			    if ($count == 1)
+			    {
+			    	$row = mysql_fetch_assoc($result1);
+			    	$_SESSION['username'] = $row['username'];
+			        $_SESSION['score'] = $row['score'];
+    				$_SESSION['level_no'] = $row['level_no'];
+				header('Location:homepage.php');
+      			    }
+				
+      			    else
+      			    {
+				echo "working";
+				
 
-$sql = "SELECT * FROM `users` WHERE username='$username' and pword='$password'";
-$result = mysql_query($sql) or die(mysql_error());
-
-$count = mysql_num_rows($result);
-if ($count == 1){
-    $_SESSION['username'] = $username;
-    $row = mysql_fetch_assoc($result);
-    $_SESSION['score'] = $row['score'];
-    $_SESSION['level_no'] = $row['level_no'];
-    header('Location:homepage.php');
-}else {
-     $msg = "Login failed.! Try ..!";
-}
-
+				$insertquery = "INSERT INTO `users` (username,anokhaid,score,level_no,date_time) VALUES ('$username', '$anokhaid',0,1, now())";
+				$result2 = mysql_query($insertquery) or die(mysql_error());	
+				if($result2)
+				{
+					$_SESSION['username'] = $username;
+					$_SESSION['score'] = 0;
+					$_SESSION['level_no'] = 1;
+					header('Location:homepage.php');
+				}
+			}
+				break;
+		case "incorrect" : $msg =  "Try again..!";	
+				 	break;
+		case "not_registered" : $msg = "plzz register in anokha site";
+					break;
+		case "email_not_verified" : $msg = "mail not verified..!";			
+						break;
+		}
+	 }
+	else
+	{
+		echo "curl error: ".curl_error($ch);
+	}
 }
 ?>
 <html>
@@ -46,12 +80,7 @@ if ($count == 1){
 </head>
 <body> 
 <h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
-<?php
-   	if(isset($msg) & !empty($msg))
-	{
-		echo $msg;
-	}
-?>
+
 <a href="register.php">
 <div class="signup">
 	<p>Register</p>
@@ -73,10 +102,10 @@ if ($count == 1){
 
 <form action="" method="POST">
     <p><label>User Name : </label>
-        <input id="username" type="text" name="username" placeholder="username" /></p>
+        <input id="username" type="text" name="login-email-mobile" placeholder="username" /></p>
 
      <p><label>Password&nbsp;&nbsp; : </label>
-         <input id="password" type="password" name="password" placeholder="password" /></p>
+         <input id="password" type="password" name="login-password" placeholder="password" /></p>
     <input class="btn register" type="submit" name="submit" value="Login" />
 
     </form>

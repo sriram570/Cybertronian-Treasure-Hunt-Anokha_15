@@ -9,8 +9,7 @@ primary key(level_no)
 
 CREATE TABLE users(
 	username varchar(255),    
-	mailid varchar(255),
-	pword varchar(255), 
+	anokhaid varchar(255),
 	score int,
 	level_no int,
 	date_time datetime,
