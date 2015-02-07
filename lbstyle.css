@@ -1,0 +1,89 @@
+@font-face{
+	font-family: 'TH';
+	src: url('img/Capture_it.ttf');
+	}
+
+@font-face{
+	font-family: 'tab_body';
+	src: url('img/Bold.otf');
+	}
+body
+{
+		line-height: 1.8em;
+		margin:0;
+		background:url('img/bg.jpg');
+		background-repeat: no-repeat;	         
+    		background-position: center center; 	
+}
+
+#background-image tbody tr td div { 
+   position: relative; 
+}
+
+#background-image tbody tr td h3 { 
+   position: absolute; 
+}
+
+#background-image
+{	
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 14px;
+	width: 80%;
+	text-align: left;
+	border-collapse: collapse;
+}
+#background-image th
+{
+	font-family: 'tab_body';
+	font-weight: normal;
+	padding: 12px 8px;
+	border-radius:8px;
+    	-moz-border-radius:8px;
+	text-align:center;
+	vertical-align:center;
+	font-size: 20px;
+	color:#D3D3D3;
+	background: #0f0f0f url('img/back.png') repeat-x;
+}
+#background-image td
+{
+	font-family: 'tab_body';
+	padding: 9px 12px;
+	color:white;
+	text-align:center;
+	border-bottom: 1px solid #333;
+	border-top: 1px solid transparent;
+}
+#background-image tfoot td
+{
+	font-size: 11px;
+	color:white;
+}
+#background-image tbody td
+{
+	background: url('img/back.png');
+	background:rgba(237,237,237,0.035);
+	color:white;
+}
+	
+#background-image tbody tr:hover td
+{
+	color: #C2C2A3;
+	background: none;
+	font-weight:bolder;
+}
+
+ 
+#background-image thead tr div {
+
+font-family:sans-serif;
+vertical-align:center;
+font-size: 35px;
+}
+
+h5 {text-align:center;
+font-family: 'TH';
+vertical-align:center;
+font-size: 35px;
+color:#D3D3D3;
+}
