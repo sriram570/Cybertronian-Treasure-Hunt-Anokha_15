@@ -56,7 +56,7 @@ if (isset($_SESSION['username']))
 </head>
 <body>
 <header>
-<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span><br><br><a href="leaderborad2.php" class="links">LEADERBOARD</a><span style="float:right"><a href="logout.php" class="links">LOGOUT</a></span></h4>
+<h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span><br><br><a href="lb.php" class="links">LEADERBOARD</a><span style="float:right"><a href="logout.php" class="links">LOGOUT</a></span></h4>
 <!--<div class="sample">
  <ul id = "navbar">
                 <li><a href = "leaderborad2.php"><div class='sideMenu'>Leaderboard</div></a></li>
