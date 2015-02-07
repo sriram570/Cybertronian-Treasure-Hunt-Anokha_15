@@ -20,6 +20,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 		switch($status)
 		{
 		case "ok" : echo "login succesfsul";
+				
 			    $username =  $result[name];
       			    $anokhaid =  $result[anokha_id];
       			    $sql = "SELECT * FROM `users` where username='$username'";
@@ -49,6 +50,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 					header('Location:homepage.php');
 				}
 			}
+			
 				break;
 		case "incorrect" : $msg =  "Try again..!";	
 				 	break;
@@ -81,7 +83,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 <body> 
 <h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
 
-<a href="register.php">
+<a href="https://anokha.amrita.edu/register">
 <div class="signup">
 	<p>Register</p>
 </div>
