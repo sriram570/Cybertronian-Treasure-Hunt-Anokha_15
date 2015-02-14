@@ -5,6 +5,10 @@ if (isset($_SESSION['username']))
 {
 	$level = $_SESSION['level_no'];
 	$image = "question/q".$level.".jpg" ;
+	$hintsql = "SELECT * FROM `questions` WHERE level_no='$level' ";
+	$hintresult = mysql_query($hintsql) or die(mysql_error());
+	$hintrow = mysql_fetch_assoc($hintresult);
+	$hint1 = $hintrow['hint'];
 	if ( isset( $_POST['Submit1'] ) ) 
 	{
 		$ans = $_POST['user_answer'];
@@ -50,15 +54,13 @@ if (isset($_SESSION['username']))
 <head>
 <script src="jquery.js" type="text/javascript"></script>
 <script src="min.js" type="text/javascript"></script>
-
     <script>
-	var ans = "aaaaaa9";
+	var ans = "<?php echo $hint1; ?>";
 	jQuery(function($){
    	$("#x").mask(ans);
 	});
 	 
     </script>
-
 <title>Homepage</title>
 <link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link href="homepagestyle.css" rel="stylesheet">
@@ -74,10 +76,8 @@ if (isset($_SESSION['username']))
 <div class="question" align="center" style:"position:relative">
 <img src="<?php echo $image; ?>" style='width:400px;height:400px'>
 <br><br><br>
-<!--<input id='answer' type='text' name='user_answer' placeholder=' Answer' align='center'/>-->
-<input id="x" type="text" name='user_answer' text-align='center'></input>
+<input id="x" type="text" name='user_answer' placeholder='click here for hint'/>
 <br><br>
 <input class='btn register' type='submit' name='Submit1' value='Submit' />
 </div> 
-
 </body>

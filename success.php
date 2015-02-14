@@ -1,3 +1,9 @@
+<?php
+$dir = 'img/answer_right/';
+$images= scandir($dir);
+$i = rand(2,sizeof($images)-1);
+$img = 'img/answer_right/'.$images[$i];
+?>
 
 <head>
 <style>
@@ -20,7 +26,7 @@ body{background:url('cosmos.jpg');}
 <body>
 <div  class='question' align='center'>
 <form action='homepage.php' method='POST'>
-<img src='success.jpg'></img>
+<img src='<?php echo $img;?>'></img>
 <br><br>
 <input class='btn' type='submit' name=submit' value='Go ahead'/>
 </div>
