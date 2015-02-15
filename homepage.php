@@ -5,9 +5,9 @@ if (isset($_SESSION['username']))
 {
   function keymaker($id)
         {
-                $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
-                $key=md5($id.$secretkey);
-                return $key;
+           $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
+           $key=md5($id.$secretkey);
+           return $key;
         }
 	$level = $_SESSION['level_no'];
 	$image = "question/q".$level.".jpg" ;
@@ -42,7 +42,6 @@ if (isset($_SESSION['username']))
 		elseif ( $total < ($_SESSION['level_no'] + 1))
                 {
                         header('Location: lastpage.php');
-                        //echo "\nOOPS!! you are too fast!";
                 }
 
 		else
@@ -51,14 +50,11 @@ if (isset($_SESSION['username']))
 		}
 		
 	}
-	else 
-	{
-		//header('Location: homepage.php');
-	}
+
 }
 else
 {
-	header('Location: login.php');
+	header('Location: index.php');
 }
 
 ?>

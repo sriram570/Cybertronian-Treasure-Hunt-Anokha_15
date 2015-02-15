@@ -1,7 +1,15 @@
- 
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+<script src="modernizr.custom.js"></script>
+<title>Cybertronian Hunt</title>
+<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="loginstyle.css">
+<meta name="veiwport" content="width=device-width">
+</head>
+<body>  
 <?php
 session_start();
-//require_once 'connect.php';
 if ($_POST['login-email-mobile'] && $_POST['login-password'])
   {
         $login = urlencode($_POST['login-email-mobile']);
@@ -25,7 +33,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 				 $username =  $result[name];
                             $anokhaid =  $result[anokha_id];
 
-			    $conn = new PDO("mysql:host=$servername;dbname=$dbname",'root','Ravindar26');
+			    $conn = new PDO("mysql:host=$servername;dbname=$dbname",'root','sriram');
 			    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			    $stmt = $conn->prepare("select * from users where username = :name
 							and anokhaid = :anokhaid");
@@ -35,7 +43,6 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 			    $row = $stmt->fetch();
 			    if($row)
 				{ 
-				//$row = mysql_fetch_assoc($result1);
                                 $_SESSION['username'] = $row['username'];
                                 $_SESSION['score'] = $row['score'];
                                 $_SESSION['level_no'] = $row['level_no'];
@@ -62,11 +69,11 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 			    	{    echo "Error: " . $e->getMessage();   }
       			    
 					break;
-		case "incorrect" : $msg =  "Try again..!";	
+		case "incorrect" : $msg =  "Password Incorrect. Try again";	
 				 	break;
-		case "not_registered" : $msg = "plzz register in anokha site";
+		case "not_registered" : $msg = "Please register in anokha site";
 					break;
-		case "email_not_verified" : $msg = "mail not verified..!";			
+		case "email_not_verified" : $msg = "Mail not verified";			
 						break;
 		}
 	 }
@@ -76,23 +83,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 	}
 }
 ?>
-<html>
-<head>
-<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
-<!--<link rel="stylesheet" type="text/css" href="normalize1.css" />-->
-	<!--<link rel="stylesheet" type="text/css" href="demo.css" />-->
-	<!--<link rel="stylesheet" type="text/css" href="style1.css" />-->
-  	<script src="modernizr.custom.js"></script>
-<title>Cybertronian Hunt</title>
-<link rel="icon" href="anokha-logo.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="loginstyle.css">
-<meta name="veiwport" content="width=device-width">
-<style>
-</style>
-</head>
-<body> 
 <h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
-
 <a href="https://anokha.amrita.edu/register">
 <div class="signup">
 	<p>Register</p>
@@ -111,7 +102,6 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
                 echo $msg;
         }
 ?>
-
 <form action="" method="POST">
     <p><label>User Name : </label>
         <input id="username" type="text" name="login-email-mobile" placeholder="username" /></p>
@@ -132,15 +122,6 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 </div>
 <div class="overlay overlay-hugeinc">
                         <button type="button" class="overlay-close">Close</button>
-                        <!--<nav>
-                                <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Work</a></li>
-                                        <li><a href="#">Clients</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                </ul>
-                        </nav>-->
                         <h1>Rules</h1>
 		<div class="overlay-text" align="center">	
 		<p>This is an individual event.</p>
