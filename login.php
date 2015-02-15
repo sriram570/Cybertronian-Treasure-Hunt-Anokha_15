@@ -36,9 +36,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
       			    }
 				
       			    else
-      			    {
-				echo "working";
-				
+      			    {	
 
 				$insertquery = "INSERT INTO `users` (username,anokhaid,score,level_no,date_time) VALUES ('$username', '$anokhaid',0,1, now())";
 				$result2 = mysql_query($insertquery) or die(mysql_error());	

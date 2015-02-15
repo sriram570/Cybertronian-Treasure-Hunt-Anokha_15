@@ -3,6 +3,12 @@ session_start();
 require_once 'connect.php';
 if (isset($_SESSION['username']))
 {
+  function keymaker($id)
+        {
+                $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
+                $key=md5($id.$secretkey);
+                return $key;
+        }
 	$level = $_SESSION['level_no'];
 	$image = "question/q".$level.".jpg" ;
 	$hintsql = "SELECT * FROM `questions` WHERE level_no='$level' ";
@@ -29,7 +35,7 @@ if (isset($_SESSION['username']))
                         $image = "question\q".$tlevel.".jpg" ;
 			$update_sql = "update users set score='$tscore',level_no='$tlevel', date_time = now()  where username='$tname'";
 			$returnval = mysql_query($update_sql);
-                        header('Location: success.php');
+                        header('Location: success.php?id='.$ans.'&&key='.keymaker($ans).'');
 
 			
 		}
@@ -41,7 +47,7 @@ if (isset($_SESSION['username']))
 
 		else
 		{
-			header('Location: wrong.php');
+			header('Location: wrong.php?id='.$ans.'&&key='.keymaker($ans).'');
 		}
 		
 	}
