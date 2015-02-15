@@ -48,6 +48,17 @@ if (isset($_SESSION['username']))
 ?>
 <html>
 <head>
+<script src="jquery.js" type="text/javascript"></script>
+<script src="min.js" type="text/javascript"></script>
+
+    <script>
+	var ans = "aaaaaa9";
+	jQuery(function($){
+   	$("#x").mask(ans);
+	});
+	 
+    </script>
+
 <title>Homepage</title>
 <link rel="icon" href="anokha-logo.ico" type="image/x-icon">
 <link href="homepagestyle.css" rel="stylesheet">
@@ -57,28 +68,16 @@ if (isset($_SESSION['username']))
 <body>
 <header>
 <h4>GREETINGS, EARTHLING<span class="greetings">SCORE: <?php echo $_SESSION['score']; ?></span><br><br><a href="lb.php" class="links">LEADERBOARD</a><span style="float:right"><a href="logout.php" class="links">LOGOUT</a></span></h4>
-<!--<div class="sample">
- <ul id = "navbar">
-                <li><a href = "leaderborad2.php"><div class='sideMenu'>Leaderboard</div></a></li>
-
-        </ul></div>-->
-<!--<div class="lo">
-<a href="logout.php">
-<img src="logout.png" style="height:50px">
-</a></div>-->
 </header>
 <h1>LEVEL : <?php echo $_SESSION['level_no']; ?></h1>
 <form action='' method='POST'>
 <div class="question" align="center" style:"position:relative">
 <img src="<?php echo $image; ?>" style='width:400px;height:400px'>
 <br><br><br>
-<input id='answer' type='text' name='user_answer' placeholder=' Answer' align='center'/>
+<!--<input id='answer' type='text' name='user_answer' placeholder=' Answer' align='center'/>-->
+<input id="x" type="text" name='user_answer' text-align='center'></input>
 <br><br>
 <input class='btn register' type='submit' name='Submit1' value='Submit' />
 </div> 
-<!--<div class="lo">
-<a href="logout.php">
-<img src="logout.png" style="height:50px">
-</a>
-</div>-->
+
 </body>
