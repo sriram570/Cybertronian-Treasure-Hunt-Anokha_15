@@ -1,7 +1,7 @@
  
 <?php
 session_start();
-require_once 'connect.php';
+//require_once 'connect.php';
 if ($_POST['login-email-mobile'] && $_POST['login-password'])
   {
         $login = urlencode($_POST['login-email-mobile']);
@@ -19,37 +19,49 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 		$status =  $result[status];
 		switch($status)
 		{
-		case "ok" : echo "login succesfsul";
-				
-			    $username =  $result[name];
-      			    $anokhaid =  $result[anokha_id];
-      			    $sql = "SELECT * FROM `users` where username='$username'";
-      			    $result1 = mysql_query($sql) or die(mysql_error());
-               	            $count = mysql_num_rows($result1);
-			    if ($count == 1)
-			    {
-			    	$row = mysql_fetch_assoc($result1);
-			    	$_SESSION['username'] = $row['username'];
-			        $_SESSION['score'] = $row['score'];
-    				$_SESSION['level_no'] = $row['level_no'];
-				header('Location:homepage.php');
-      			    }
-				
-      			    else
-      			    {	
+		case "ok" : try{
+				$servername = "localhost";
+				$dbname = "treasurehunt";
+				 $username =  $result[name];
+                            $anokhaid =  $result[anokha_id];
 
-				$insertquery = "INSERT INTO `users` (username,anokhaid,score,level_no,date_time) VALUES ('$username', '$anokhaid',0,1, now())";
-				$result2 = mysql_query($insertquery) or die(mysql_error());	
-				if($result2)
+			    $conn = new PDO("mysql:host=$servername;dbname=$dbname",'root','Ravindar26');
+			    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			    $stmt = $conn->prepare("select * from users where username = :name
+							and anokhaid = :anokhaid");
+			    $stmt->bindParam(':name',$username);
+		            $stmt->bindParam(':anokhaid',$anokhaid);
+			    $stmt->execute();
+			    $row = $stmt->fetch();
+			    if($row)
+				{ 
+				//$row = mysql_fetch_assoc($result1);
+                                $_SESSION['username'] = $row['username'];
+                                $_SESSION['score'] = $row['score'];
+                                $_SESSION['level_no'] = $row['level_no'];
+                                header('Location:homepage.php');
+				}
+			else
+				{
+			$stmt1 = $conn->prepare("insert into users (username,anokhaid,score,level_no,date_time)
+					values(:username,:anokhaid,0,1,now())");
+                                                      
+                            $stmt1->bindParam(':username',$username);
+                            $stmt1->bindParam(':anokhaid',$anokhaid);
+                  
+				if($stmt1->execute())
 				{
 					$_SESSION['username'] = $username;
-					$_SESSION['score'] = 0;
-					$_SESSION['level_no'] = 1;
-					header('Location:homepage.php');
+                                        $_SESSION['score'] = 0;
+                                        $_SESSION['level_no'] = 1;
+                                        header('Location:homepage.php');
 				}
-			}
-			
-				break;
+				}
+				}
+				catch(PDOException $e)
+			    	{    echo "Error: " . $e->getMessage();   }
+      			    
+					break;
 		case "incorrect" : $msg =  "Try again..!";	
 				 	break;
 		case "not_registered" : $msg = "plzz register in anokha site";

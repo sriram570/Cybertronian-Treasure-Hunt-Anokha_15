@@ -53,8 +53,14 @@ if (isset($_SESSION['username']))
 	}
 	else 
 	{
+		//header('Location: homepage.php');
 	}
 }
+else
+{
+	header('Location: login.php');
+}
+
 ?>
 <html>
 <head>
