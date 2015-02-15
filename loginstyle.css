@@ -205,9 +205,8 @@ background-position: none center;
 .overlay-text{
 	margin-left:auto;
 	margin-right:auto;
-	width:70%;
+	width:50%;
 	color:white;
-	text-align:justify;
 }
 /* Overlay closing cross */
 .overlay .overlay-close {
@@ -225,7 +224,10 @@ background-position: none center;
 	outline: none;
 	z-index: 100;
 }
-
+.the_rules{
+	line-height:30px;
+	text-align:justify;
+}	
 /*/* Menu style 
 .overlay nav {
 	text-align: center;

@@ -33,7 +33,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 				 $username =  $result[name];
                             $anokhaid =  $result[anokha_id];
 
-			    $conn = new PDO("mysql:host=$servername;dbname=$dbname",'root','sriram');
+			    $conn = new PDO("mysql:host=$servername;dbname=$dbname",'root','c407@ab123');
 			    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			    $stmt = $conn->prepare("select * from users where username = :name
 							and anokhaid = :anokhaid");
@@ -71,9 +71,9 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 					break;
 		case "incorrect" : $msg =  "Password Incorrect. Try again";	
 				 	break;
-		case "not_registered" : $msg = "Please register in anokha site";
+		case "not_registered" : $msg = "Oh Oh! It seems you are not registerd with the Autobots yet! That big REGISTER button on your right will help ya!";
 					break;
-		case "email_not_verified" : $msg = "Mail not verified";			
+		case "email_not_verified" : $msg = "Hmm... Optimus Prime says your Email has not been verified!";			
 						break;
 		}
 	 }
@@ -103,8 +103,8 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
         }
 ?>
 <form action="" method="POST">
-    <p><label>User Name : </label>
-        <input id="username" type="text" name="login-email-mobile" placeholder="username" /></p>
+    <p><label>Email/Phone : </label>
+        <input id="username" type="text" name="login-email-mobile" placeholder="" /></p>
 
      <p><label>Password&nbsp;&nbsp; : </label>
          <input id="password" type="password" name="login-password" placeholder="password" /></p>
@@ -123,11 +123,12 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 <div class="overlay overlay-hugeinc">
                         <button type="button" class="overlay-close">Close</button>
                         <h1>Rules</h1>
-		<div class="overlay-text" align="center">	
-		<p>This is an individual event.</p>
-   <p>Anyone can participate irrespective of their geographical location.</p>
-   <p>Helping others with answers is a violation of the intergalactic law. Suggesting obscure clues and gently nudging them to the answer however is not.</p>
-               
+		<div class="overlay-text" align="center">
+		<ul class="the_rules">	
+			<li>This is an individual event.</li>
+   			<li>Anyone can participate irrespective of their geographical location.</li>
+   			<li>Helping others with answers is a violation of the intergalactic law. Suggesting obscure clues and gently nudging them to the answer however is not.</li>
+               </ul>
 		</div>
                 <script src="classie.js"></script>
                 <script src="demo1.js"></script>
