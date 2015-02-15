@@ -1,9 +1,9 @@
 <?php
   function keymaker($id)
         {
-                $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
-                $key=md5($id.$secretkey);
-                return $key;
+          $secretkey='hfaa1h1awhqa3sdoyasw7e2sho3mqeojemdw09jdsklafjp1qwoijedmp03w9eiojdma';
+          $key=md5($id.$secretkey);
+          return $key;
         }
 $testurlkey = keymaker($_GET['id']);
 if(isset($_GET['id']) && $testurlkey==$_GET['key'])
@@ -18,7 +18,6 @@ else
 	header('Location: homepage.php');
 }
 ?>
-
 <head>
 <style>
 .question{
@@ -40,9 +39,9 @@ body{background:url('cosmos.jpg');}
 <body>
 <div  class='question' align='center'>
 <form action='homepage.php' method='POST'>
-<img src='<?php echo $img;?>'></img>
-<br><br>
-<input class='btn' type='submit' name=submit' value='Go ahead'/>
+<img src="<?php echo $img; ?>" style='width:450px;height:450px'>
+<br><br><br>
+<input class='btn' type='submit' value='Go ahead'/>
 </div>
 </body>
 
