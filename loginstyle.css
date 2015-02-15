@@ -161,7 +161,7 @@
 		margin:50px 150px 0 0;
 		height:200px;
 		border-color: rgba(0,0,0,0.5);
-		border-radius:50%;
+		border-radius:100%;
 		border: 20px dotted rgba(0,0,0,0.7);
 		font-weight: bold;
 		line-height: 130px;
@@ -171,7 +171,7 @@
 		margin:50px 0 0 150px;
 		height: 200px;
 		border-color: rgba(0,0,0,0.5);
-                border-radius:50%;
+                border-radius:100%;
                 border: 20px dotted rgba(0,0,0,0.7);
                 font-weight: bold;
 		line-height: 130px;
