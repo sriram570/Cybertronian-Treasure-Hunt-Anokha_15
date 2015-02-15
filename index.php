@@ -83,7 +83,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 	}
 }
 ?>
-<h1>Cybertr<span><img src="anokha-logo.ico" class="head-logo" align:"center"></span>nian Hunt</h1>
+<h1>Cybertr<a href='https://www.anokha.amrita.edu'><span><img src="anokha-logo.ico" class="head-logo" align:"center"></span></a>nian Hunt</h1>
 <a href="https://anokha.amrita.edu/register">
 <div class="signup">
 	<p>Register</p>
@@ -95,7 +95,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 </div>
 </a>
 <div id="loginScreen">
-	<a href="#" class="cancel">&times;</a>
+	<a href='' class="cancel">&times;</a>
 	<?php
         if(isset($msg) & !empty($msg))
         {
@@ -115,7 +115,7 @@ if ($_POST['login-email-mobile'] && $_POST['login-password'])
 <div id="cover">
 </div>
 <div style="width:100%;bottom:0px;position:fixed;" align="right">
-<img src="amrita.png" style="height: 50px; padding:0 10px 0 0;">
+<img src="amrita.png" style="height: 70px; padding:0 10px 0 0;">
 </div>
 <div style="bottom:20px; position:fixed; width:100%;" align="left">
 <button id="trigger-overlay" type="button" class="buttn">RULES</button>
